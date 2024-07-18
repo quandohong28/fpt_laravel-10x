@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
+use App\Models\Category;
 
-class DepartmentController extends Controller
+class CategoryController extends Controller
 {
-    
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $departments = DB::table('departments')->get();
-        return view('admin.categories.index', compact('departments'));
+        $categories = Category::all();
     }
 
     /**
      * Show the form for creating a new resource.
-     * GET
      */
     public function create()
     {
@@ -26,36 +26,32 @@ class DepartmentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * POST
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
     }
 
     /**
      * Display the specified resource.
-     * GET
      */
-    public function show(string $id)
+    public function show(Category $category)
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     * GET
      */
-    public function edit(string $id)
+    public function edit(Category $category)
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     * PUT/PATCH
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
     }
@@ -63,7 +59,7 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Category $category)
     {
         //
     }

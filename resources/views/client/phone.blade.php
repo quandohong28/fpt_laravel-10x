@@ -18,7 +18,7 @@
 @section('content')
     <div class="px-20 py-10">
         @livewire('breadcrumb')
-        @livewire('list-category')
+        @livewire('list-category', ['parent_id' => 0])
 
         <h1 class="px-12 text-2xl">iPhone 15 Series</h1>
         <div class="flex mb-12 overflow-x-auto hide-scrollbar">

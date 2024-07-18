@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    <livewire:partials.admin-header />
-    @yield('content')
-    <livewire:partials.admin-footer />
+
+
     @livewireScripts
 </body>
 

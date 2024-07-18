@@ -25,14 +25,14 @@
 
 <body class="">
     <header class="fixed top-0 start-0 end-0 z-50">
-        @livewire('partials.header')
+        @include('partials.header')
     </header>
     <main
         class="pt-12 min-h-screen bg-white dark:bg-black text-slate-800 dark:text-white font-extralight">
         @yield('content')
     </main>
 
-    @livewire('partials.footer')
+    @include('partials.footer')
     @livewireScripts
 </body>
 
