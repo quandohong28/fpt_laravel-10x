@@ -23,7 +23,7 @@ class PostController extends Controller
         // $posts = Post::where('category_id', 1)->get();
 
         // tìm kiếm dữ liệu
-        // $posts = Post::where('title', 'LIKE', '%ro%')->get();
+        $posts = Post::where('title', 'LIKE', '%viet%')->get();
 
         /**
          * Các hàm trong sql
@@ -38,9 +38,14 @@ class PostController extends Controller
         // $sum = Post::sum('view');
 
         // Sắp xếp dữ liệu
-        $posts = Post::orderBy("created_at")->get();
+        // $posts = Post::orderBy("created_at")->get();
 
-        return $posts;
+        // Phân trang
+        $posts = Post::paginate(10);
+
+        // dd($posts);
+
+        return view('client.post-list', compact('posts'));
     }
 
     /**
@@ -56,7 +61,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Thêm dữ liệu trong bảng
+
+        $data = [
+            'title' => 'Bài viết 1',
+            'image_url' => 'https://www.google.com.vn',
+            'description' => 'moo tar bafi vieets 1',
+            'content' => 'noi dung bai viet 1',
+            'view' => 12,
+            'category_id' => 2,
+        ];
+
+        if (Post::create($data)) {
+            return $data;
+        };
     }
 
     /**
