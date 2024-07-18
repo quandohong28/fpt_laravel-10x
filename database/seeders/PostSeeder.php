@@ -16,14 +16,16 @@ class PostSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 100) as $index) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('posts')->insert([
                 'title' => $faker->title,
-                'content' => $faker->paragraph,
-                'imageUrl' => $faker->imageUrl,
+                'image_url' => $faker->imageUrl,
                 'description' => $faker->sentence,
-                'view_count' => rand(1, 1000),
-                'category_id' => rand(1, 4),
+                'content' => $faker->paragraph,
+                'view' => rand(1, 1000),
+                'category_id' => rand(1, 10),
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         }
     }

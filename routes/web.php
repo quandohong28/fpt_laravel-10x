@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Amin\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('client.home');
-})->name('page.home');
+    return 'hello world';
+});
+
+Route::get('/posts', [PostController::class, 'index']);
