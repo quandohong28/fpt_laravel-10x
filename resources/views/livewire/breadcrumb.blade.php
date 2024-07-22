@@ -3,7 +3,7 @@
         <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-extralight text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                 <i class="fa-thin fa-house fa-fw me-2"></i>
-                <span>Home</span>
+                <span>Trang chủ</span>
             </a>
         </li>
         <li>

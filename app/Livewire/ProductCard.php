@@ -2,23 +2,20 @@
 
 namespace App\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class ProductCard extends Component
 {
-    public $imageUrl;
-    public $name;
-    public $price;
-    public $decredPrice;
+    public $product;
+
+    public function mount($id)
+    {
+        $this->product = Product::where("id", $id)->first();
+    }
     public function render()
     {
-        return view('livewire.product-card', [
-            'product' => [
-                'imageUrl' => $this->imageUrl,
-                'name' => $this->name,
-                'price' => $this->price,
-                'decredPrice' => $this->decredPrice
-            ]
-        ]);
+        $product = $this->product;
+        return view('livewire.product-card', compact('product'));
     }
 }

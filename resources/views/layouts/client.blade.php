@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('logo/logo-light.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -27,13 +27,15 @@
     <header class="fixed top-0 start-0 end-0 z-50">
         @include('partials.header')
     </header>
-    <main
-        class="pt-12 min-h-screen bg-white dark:bg-black text-slate-800 dark:text-white font-extralight">
+    <main class="pt-12 min-h-screen bg-white dark:bg-black text-slate-800 dark:text-white font-extralight">
         @yield('content')
     </main>
 
     @include('partials.footer')
+    @include('partials.cart')
     @livewireScripts
+
+    @yield('script')
 </body>
 
 </html>

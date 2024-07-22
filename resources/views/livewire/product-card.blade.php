@@ -1,11 +1,12 @@
-<div class="min-w-max rounded-lg min-h-800">
-    <a href="#">
-        <img class="rounded-t-lg w-[280px]" src="https://hoanggiaxt.vn/wp-content/uploads/2024/06/natural.png " alt="" />
+<div class="min-w-max rounded-lg min-h-800 p-10">
+    <a href="{{ route('client.product-detail', ['productSlug' => $product->slug]) }}">
+        <img class="w-48 h-60 object-contain mb-4" src="{{ $product->image_url }}" alt="" />
         <div class="p-4 text-center">
-            <h5 class="mb-2 tracking-tight text-gray-900 dark:text-white">iPhone 15 Pro Max
+            <h5 class="mb-2 tracking-tight text-gray-900 dark:text-white">{{ $product->name }}
             </h5>
-            <p class="italic text-xs line-through text-gray-500 dark:text-gray-400">30.000.000đ</p>
-            <p class="text-red-500 dark:text-gray-400">30.000.000đ</p>
+            <p class="italic text-xs line-through text-gray-500 dark:text-gray-400">{{ number_format($product->price) }}
+            </p>
+            <p class="text-red-500 dark:text-gray-400">{{ number_format($product->price) }} VNĐ</p>
         </div>
     </a>
     <div class="text-center">
