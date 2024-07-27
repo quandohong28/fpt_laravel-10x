@@ -21,10 +21,18 @@
 
     <div class="mb-10">
         <h1 class="font-bold text-lg mb-4">Movie List</h1>
-
-        <a href="{{ route('movie.create') }}"
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-10">Add
-            Movie</a>
+        <div class="mb-4 flex justify-between">
+            <a href="{{ route('movie.create') }}"
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-10">Add
+                Movie</a>
+            <form action="{{ route('movie.index') }}" method="GET">
+                <input type="text" name="search"
+                    class="border border-gray-300 dark:border-gray-700 rounded-lg p-2 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                    placeholder="Search...">
+                <button type="submit"
+                    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-10">Search</button>
+            </form>
+        </div>
     </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">

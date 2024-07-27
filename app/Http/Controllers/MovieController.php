@@ -11,8 +11,14 @@ class MovieController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request) {
+            $keyword = $request->search;
+            $movies = Movie::where('title', 'like', "%$keyword%")->paginate(10);
+            return view('admin.movie.index', compact('movies'));
+        }
+
         $movies = Movie::orderByDesc('id')->paginate(10);
         return view('admin.movie.index', compact('movies'));
     }
@@ -80,8 +86,7 @@ class MovieController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/uploads', $fileName);
             $data['poster'] = $fileName;
-        }
-        else {
+        } else {
             $data['poster'] = $oldPoster;
         }
 
