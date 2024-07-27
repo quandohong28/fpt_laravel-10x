@@ -16,9 +16,14 @@
 
     @include('partials.admin.sidebar')
 
-    @yield('main')
-
-    @include('partials.admin.footer')
+    <div class="sm:ml-64">
+        <div class="p-8 mt-14">
+            <main class="min-h-screen">
+                @yield('main')
+            </main>
+        </div>
+        @include('partials.admin.footer')
+    </div>
 
     @livewireScripts
 </body>
