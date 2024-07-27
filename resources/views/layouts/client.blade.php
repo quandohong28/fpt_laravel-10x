@@ -11,14 +11,11 @@
 </head>
 
 <body>
-
-    @include('partials.admin.header')
-
-    @include('partials.admin.sidebar')
+    @include('partials.client.header')
 
     @yield('main')
 
-    @include('partials.admin.footer')
+    @include('partials.client.footer')
 
     @livewireScripts
 </body>
