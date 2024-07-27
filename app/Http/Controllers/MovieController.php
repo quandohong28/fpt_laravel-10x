@@ -13,15 +13,24 @@ class MovieController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request) {
+        if ($request->has('search') && !empty($request->search)) {
             $keyword = $request->search;
             $movies = Movie::where('title', 'like', "%$keyword%")->paginate(10);
+
+            if ($movies->isEmpty()) {
+                return view('admin.movie.index', [
+                    'movies' => $movies,
+                    'notFoundMessage' => 'No movies found'
+                ]);
+            }
+
             return view('admin.movie.index', compact('movies'));
         }
 
         $movies = Movie::orderByDesc('id')->paginate(10);
         return view('admin.movie.index', compact('movies'));
     }
+
 
     /**
      * Show the form for creating a new resource.

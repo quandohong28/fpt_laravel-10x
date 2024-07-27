@@ -17,6 +17,13 @@
                 <span class="font-medium">{{ session('error') }}</span>
             </div>
         @endsession
+
+        @isset($notFoundMessage)
+            <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+                <span class="font-medium">{{ $notFoundMessage }}!</span>
+            </div>
+        @endisset
+
     </div>
 
     <div class="mb-10">
