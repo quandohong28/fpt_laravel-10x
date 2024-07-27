@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('client.home');
 })->name('page.home');
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
