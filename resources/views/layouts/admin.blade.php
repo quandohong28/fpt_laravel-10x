@@ -12,11 +12,14 @@
 
 <body>
 
-    @include('partials.admin.header')
 
     @include('partials.admin.sidebar')
-
-    @yield('main')
+    <div class="p-4 sm:ml-48">
+        <div class="p-4">
+            @include('partials.admin.header')
+            @yield('main')
+        </div>
+    </div>
 
     @include('partials.admin.footer')
 

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    @include('partials.client.pre-header')
     @include('partials.client.header')
 
     @yield('main')
