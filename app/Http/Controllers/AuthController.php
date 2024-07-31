@@ -15,13 +15,13 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('admin.dashboard');
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            return redirect()->route('admin.dashboard')->with('success','Login successfully');
         }
 
-        return back()->with('error', 'Invalid credentials');
+        return back()->with('error', 'Username or password incorrect');
     }
 
     public function register()
@@ -31,6 +31,7 @@ class AuthController extends Controller
 
     public function postRegister(Request $request)
     {
+        
     }
 
     public function logout()

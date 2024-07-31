@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,10 +11,21 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->input('search');
+
+        $query = User::query();
+
+        if ($search) {
+            $query->where('fullname', 'LIKE', '%' . $search . '%');
+        }
+
+        $users = $query->orderBy("created_at", "desc")->paginate(10);
+
+        return view('admin.users.index', ['users' => $users]);
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -14,6 +14,9 @@
 
 
     @include('partials.admin.sidebar')
+    <div class="sm:ml-48">
+        @include('partials.admin.pre-header')
+    </div>
     <div class="p-4 sm:ml-48">
         <div class="p-4">
             @include('partials.admin.header')
