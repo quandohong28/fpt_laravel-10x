@@ -13,8 +13,7 @@
 <div>
     <div class=" sm:rounded-lg">
         <form class="flex items-center max-w-sm mb-8" action="{{ route('admin.users.index') }}" method="GET">
-            <input type="text" name="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search..." value="{{ request()->input('search') }}"
-            />
+            <input type="text" name="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search..." value="{{ request()->input('search') }}" />
             <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -46,7 +45,7 @@
                     <th scope="row" class="px-6 py-4 font-normal text-gray-900 whitespace-nowrap dark:text-white">
                         <div class="flex items-center gap-4">
                             <div>
-                                <img class="rounded-lg w-16 h-16 object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww">
+                                <img class="rounded-lg w-16 h-16 object-cover" src="{{ asset('storage/uploads/' . $user->avatar) }}">
                             </div>
                             <div>
                                 <div class="text-sm font-medium text-gray-900 dark:text-white mb-2">

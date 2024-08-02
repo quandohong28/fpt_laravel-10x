@@ -20,15 +20,12 @@ return new class extends Migration
             $table->string('password');
             $table->string('avatar')->nullable();
             $table->integer('is_admin')->default(0)->comment('0: user, 1: admin');
-            $table->integer('is_active')->default(0)->comment('0: active, 1: inactive');
+            $table->integer('is_active')->default(1)->comment('1: active, 0: inactive');
             $table->rememberToken();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');

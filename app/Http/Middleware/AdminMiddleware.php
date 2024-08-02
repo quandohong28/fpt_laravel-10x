@@ -27,6 +27,6 @@ class AdminMiddleware
             return redirect()->route('auth.login')->with('error', 'Your account has been disabled');
         }
         
-        return redirect()->route('page.home')->with('error', 'Please log in to access this page');
+        return redirect()->route('page.profile.index')->with('error', 'Please log in to access this page');
     }
 }
