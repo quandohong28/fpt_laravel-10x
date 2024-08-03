@@ -14,7 +14,9 @@
     @include('partials.client.pre-header')
     @include('partials.client.header')
 
+    <div class="min-h-screen mb-10">
     @yield('main')
+    </div>
 
     @include('partials.client.footer')
 
