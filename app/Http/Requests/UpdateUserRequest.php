@@ -25,6 +25,8 @@ class UpdateUserRequest extends FormRequest
             'fullname' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . auth()->id(),
             'email' => 'required|email|max:255|unique:users,email,' . auth()->id(),
+            'new_password' => 'nullable|string|min:8',
+            'confirm_password' => 'nullable|same:new_password',
         ];
     }
 

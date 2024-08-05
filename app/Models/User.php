@@ -25,6 +25,11 @@ class User extends Authenticatable
         'avatar',
         'is_admin',
         'is_active',
+        'location',
+        'tel',
+        'date_of_birth',
+        'bio',
+
     ];
 
     /**

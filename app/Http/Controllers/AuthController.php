@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -48,5 +49,17 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect()->route('auth.login');
+    }
+
+    public function sendMail()
+    {
+        return view('auth.forgot-password');
+    }
+
+    public function postSendMail(Request $request) {
+        $email = $request->email;
+        $title = 'Forgot Password';
+        $name = 'Do Hong Quan';
+        $newPassword = Hash::make(rand(10000000, 99999999));
     }
 }

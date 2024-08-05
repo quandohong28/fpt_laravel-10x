@@ -20,9 +20,9 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('12345678'),
-            'avatar' => 'admin.jpg',
+            'avatar' => 'default-user.png',
             'is_admin' => 1,
-            'is_active' => 0,
+            'is_active' => 1,
             'created_at' => $now,
             'updated_at' => $now,
         ]);
@@ -32,9 +32,9 @@ class UserSeeder extends Seeder
             'username' => 'quandohong28',
             'email' => 'quandohong28@gmail.com',
             'password' => Hash::make('12345678'),
-            'avatar' => 'quandohong28.jpg',
+            'avatar' => 'default-user.png',
             'is_admin' => 0,
-            'is_active' => 0,
+            'is_active' => 1,
             'created_at' => $now,
             'updated_at' => $now,
         ]);

@@ -1,0 +1,16 @@
+- render trang home
+- Trang tác giả
+- render trang detail
+- render trang dashboard
+    + Top 10 post co luot xem cao nhat
+    + Top 10 post co nhieu like nhat
+    + Top 10 hastag co nhieu bai viet nhat
+    + ...
+
+- Them bai viet moi
+- Sua bai viet
+- Xoa bai viet
+
+- Them danh muc moi
+- Sua danh muc
+- Xoa danh muc
